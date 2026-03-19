@@ -4,7 +4,7 @@
   "description": "CLI to summarize recent git commits, extract TODOs, and open relevant PRs",
   "main": "dist/index.js",
   "bin": {
-    "git-digest": "dist/index.js"
+    "git-digest": "dist/src/index.js"
   },
   "scripts": {
     "build": "tsc",
