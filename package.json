@@ -1,0 +1,33 @@
+{
+  "name": "git-digest",
+  "version": "0.1.0",
+  "description": "CLI to summarize recent git commits, extract TODOs, and open relevant PRs",
+  "main": "dist/index.js",
+  "bin": {
+    "git-digest": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "lint": "eslint . --ext .ts",
+    "prepare": "npm run build"
+  },
+  "keywords": ["git","cli","digest","commits"],
+  "author": "Kodex",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0"
+  },
+  "dependencies": {
+    "commander": "^10.0.0",
+    "execa": "^7.0.0",
+    "open": "^9.0.0"
+  }
+}
