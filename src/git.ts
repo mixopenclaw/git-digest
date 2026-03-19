@@ -1,8 +1,8 @@
-import execa from 'execa';
+import { execaCommand } from 'execa';
 
 export async function gitLog(count: number) {
   try {
-    const { stdout } = await execa('git', ['log', `-n`, String(count), `--pretty=format:%h %s -- %an`]);
+    const { stdout } = await execaCommand(`git log -n ${count} --pretty=format:%h %s -- %an`);
     return stdout.split('\n').filter(Boolean);
   } catch (e) {
     return [];
@@ -26,12 +26,9 @@ export function summarizeCommits(commits: string[]) {
 
 export async function findPrUrl() {
   try {
-    // Try to find PR URL from git remote or hub
-    const { stdout } = await execa('git', ['config', '--get', 'remote.origin.url']);
+    const { stdout } = await execaCommand('git config --get remote.origin.url');
     const url = stdout.trim();
-    // naive transform from git@github.com:user/repo.git or https://github.com/user/repo.git to https://github.com/user/repo
     const repo = url.replace(/^git@/, 'https://').replace(':', '/').replace(/\.git$/, '');
-    // open PRs page
     return `${repo}/pulls`;
   } catch (e) {
     return null;
