@@ -6,11 +6,16 @@ import (
 )
 
 func TestHelpFlag(t *testing.T) {
-	cmd := exec.Command("go", "run", "main.go", "--help")
-	cmd.Dir = "cli"
+	// Run 'go run cli/main.go --help' from the repository root.
+	cmd := exec.Command("go", "run", "cli/main.go", "--help")
+	// When `go test` runs inside the package folder (cli/), relative paths
+	// are resolved from that folder. Set Dir to parent (repo root) so
+	// the path 'cli/main.go' is valid.
+	cmd.Dir = ".."
 	out, err := cmd.CombinedOutput()
+	t.Logf("output:\n%s", out)
 	if err != nil {
-		t.Fatalf("failed to run help: %v", err)
+		t.Fatalf("failed to run help: %v, output: %s", err, out)
 	}
 	if string(out) == "" || !containsHelp(string(out)) {
 		t.Errorf("expected help output, got: %s", out)
