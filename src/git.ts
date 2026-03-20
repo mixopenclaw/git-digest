@@ -42,3 +42,7 @@ export async function summarize({ count }: { count: number }) {
   const prUrl = await findPrUrl();
   return { summary, prUrl };
 }
+
+export function scanTextForTodos(text: string){
+  return text.split('\n').filter(l=>l.includes('TODO'))
+}
