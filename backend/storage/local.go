@@ -2,7 +2,6 @@ package storage
 
 import (
 	"io/ioutil"
-	"os"
 )
 
 type LocalStorage struct {
