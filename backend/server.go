@@ -1,10 +1,10 @@
 package main
 
 import (
-	"log"
 	"net/http"
 
 	"backend/handlers"
+	"backend/logx"
 	"backend/metrics"
 )
 
@@ -15,12 +15,12 @@ func StartServer(addr string) error {
 	// Metrics
 	http.Handle("/metrics", metrics.MetricsHandler())
 
-	log.Printf("starting server on %s", addr)
+	logx.Infof("starting server on %s", addr)
 	return http.ListenAndServe(addr, nil)
 }
 
 func main() {
 	if err := StartServer(":8080"); err != nil {
-		log.Fatal(err)
+		logx.Errorf("server failed: %v", err)
 	}
 }
