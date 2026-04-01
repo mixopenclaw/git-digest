@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "dev": {
+      "description": "Run Next.js dev server with hot reload",
+      "command": "pnpm dev",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "preview": {
+      "description": "Build and preview a production-like build",
+      "build": "pnpm build",
+      "command": "pnpm start",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
