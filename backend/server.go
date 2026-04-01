@@ -5,15 +5,15 @@ import (
 	"net/http"
 	"time"
 
-	"backend/handlers"
-	"backend/logx"
-	"backend/metrics"
-	"backend/trace"
+	"github.com/mixopenclaw/git-digest/backend/handlers"
+	"github.com/mixopenclaw/git-digest/backend/logx"
+	"github.com/mixopenclaw/git-digest/backend/metrics"
+	"github.com/mixopenclaw/git-digest/backend/trace"
 )
 
 // StartServer wires basic HTTP routes and starts the server.
 func StartServer(addr string) error {
-	http.HandleFunc("/api/scan", handlers.PostScan) // POST
+	http.HandleFunc("/api/scan", handlers.PostScan)        // POST
 	http.HandleFunc("/api/scan/", handlers.GetScanResults) // GET with mux-style handling expected elsewhere
 	// Metrics
 	http.Handle("/metrics", metrics.MetricsHandler())

@@ -1,15 +1,15 @@
-package backend
+package main
 
 // Config holds application-wide configuration values used by background jobs.
 type Config struct {
-	ArtifactRetentionDays int
+	ArtifactRetentionDays  int
 	CleanupIntervalMinutes int
 }
 
 // DefaultConfig returns a sensible default configuration.
 func DefaultConfig() *Config {
 	return &Config{
-		ArtifactRetentionDays: 30,
+		ArtifactRetentionDays:  30,
 		CleanupIntervalMinutes: 60,
 	}
 }

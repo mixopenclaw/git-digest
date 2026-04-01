@@ -1,9 +1,9 @@
 package jobs
 
 import (
-	"time"
-	"backend/logx"
 	"context"
+	"github.com/mixopenclaw/git-digest/backend/logx"
+	"time"
 )
 
 // StartCleanupWorker starts a goroutine that periodically removes old artifacts.

@@ -3,7 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
-	"github.com/gorilla/mux"
+	"strings"
 )
 
 // ResultsResponse represents paginated results for a scan.
@@ -15,8 +15,11 @@ type ResultsResponse struct {
 
 // GetScanResults handles GET /api/scan/{id}/results
 func GetScanResults(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	scanID := vars["id"]
+	// Extract scan ID from URL path: /api/scan/{id}/results
+	// Trim the known prefix and parse the remaining segments.
+	path := strings.TrimPrefix(r.URL.Path, "/api/scan/")
+	segments := strings.SplitN(path, "/", 2)
+	scanID := segments[0]
 
 	// TODO: load results from result_store
 	resp := ResultsResponse{
