@@ -3,8 +3,10 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   test: {
     include: [
-      'backend/**/*.test.{ts,js}',
-      'scanner/**/*.test.{ts,js}',
+      'src/**/*.test.{ts,js,tsx,jsx}',
+      'cli/**/*.test.{ts,js,tsx,jsx}',
+      'test/**/*.test.{ts,js,tsx,jsx}',
     ],
+    exclude: ['frontend/**'],
   },
 })
