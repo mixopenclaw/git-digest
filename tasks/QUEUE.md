@@ -62,6 +62,8 @@ When an autonomous runner works a task it MUST:
     - tasks/patches/0010-scanner-init-add-scanner-package-skeleton.patch
     - tasks/patches/0001-api-scan-add-POST-api-scan-endpoint.patch
   allowPush: true
+  RemoteBranch: opencode/batch-01-apply-on-main
+  PR: https://github.com/mixopenclaw/git-digest/pull/12
   Notes: Created scaffolding and patch files for the 10-item batch plan. No credentials were used and no remote pushes were made. To push branches and open PRs, set allowPush: true on the task or reply with `ALLOW_PUSH`.
 
 
