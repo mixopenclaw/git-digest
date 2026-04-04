@@ -1,0 +1,23 @@
+{
+  "app.title": "Git Digest",
+  "nav.home": "Home",
+  "nav.scan": "Scan",
+  "nav.login": "Login",
+  "hero.heading": "Understand your codebase at a glance",
+  "hero.subheading": "Scan repositories for TODOs, tech debt, and actionable insights.",
+  "hero.cta.scan": "Start Scanning",
+  "hero.cta.docs": "Read the Docs",
+  "scan.form.path": "Repository Path",
+  "scan.form.format": "Output Format",
+  "scan.form.submit": "Run Scan",
+  "scan.results.title": "Scan Results",
+  "scan.results.empty": "No findings yet. Run a scan to see results.",
+  "login.title": "Sign In",
+  "login.username": "Username",
+  "login.password": "Password",
+  "login.submit": "Log In",
+  "error.boundary.title": "Something went wrong",
+  "error.boundary.message": "An unexpected error occurred. Please reload the page.",
+  "toast.success": "Operation completed successfully.",
+  "toast.error": "An error occurred."
+}
